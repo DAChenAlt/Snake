@@ -1,7 +1,7 @@
 include("utils.jl")
 # include("store.jl")
 
-const punk = TreeSearch{NotBad,Punk,SeqLocalSearch{7}}
+const punk = TreeSearch{NotBad,Punk,SeqLocalSearch{6}}
 const ff_punk = PartialExplore{PartialScaledSelect,PartialPunk,true}
 const scaled = PartialExplore{PartialScaled,PartialPunk,true}
 algoDict = Dict()
