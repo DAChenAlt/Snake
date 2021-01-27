@@ -19,7 +19,7 @@ algoDict["clumsy"] = Earthworm{2,scaled,ff_punk}
 algoDict["moon"] = Earthworm{2,ff_punk,punk}
 algoDict["appletree"] = TreeSearch{BestCase,Coop,SeqLocalSearch{3}}
 algoDict["shaihulud"] = Earthworm{6,Kettle,punk}
-algoDict["test1"] = TreeSearch{BestCase,Punk,SeqLocalSearch{5}}
+algoDict["test1"] = TreeSearch{BestCase,Punk,SeqLocalSearch{4}}
 function whichalgo(req)
     if haskey(req, :params)
         name = req[:params][:s]
