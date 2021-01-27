@@ -24,7 +24,7 @@ start(x) = "ok"
 
 const color_palette = Colors.hex.(range(colorant"#a26fbb", colorant"#17847f", length=25))
 function snake_info(req)
-	JSON.json((apiversion="1", color="#$(rand(color_palette))",))
+	JSON.json((apiversion="1", color="#660000", head="evil", tail="hook",))
 end
 
 function test_store(req)
