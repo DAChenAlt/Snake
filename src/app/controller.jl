@@ -1,7 +1,7 @@
 include("utils.jl")
 # include("store.jl")
 
-const punk = TreeSearch{NotBad,Punk,SeqLocalSearch{2}}
+const punk = TreeSearch{NotBad,Punk,SeqLocalSearch{7}}
 const ff_punk = PartialExplore{PartialScaledSelect,PartialPunk,true}
 const scaled = PartialExplore{PartialScaled,PartialPunk,true}
 algoDict = Dict()
@@ -17,7 +17,9 @@ algoDict["antimatter"] = punk
 algoDict["diamond"] = ff_punk
 algoDict["clumsy"] = Earthworm{2,scaled,ff_punk}
 algoDict["moon"] = Earthworm{2,ff_punk,punk}
-
+algoDict["appletree"] = TreeSearch{BestCase,Coop,SeqLocalSearch{3}}
+algoDict["shaihulud"] = Earthworm{6,Kettle,punk}
+algoDict["test1"] = TreeSearch{BestCase,Punk,SeqLocalSearch{5}}
 function whichalgo(req)
     if haskey(req, :params)
         name = req[:params][:s]
@@ -25,7 +27,7 @@ function whichalgo(req)
             name = "default"
         end
     end
-    name = "moon"
+    name = "test1"
     return algoDict[name]
 end
 
