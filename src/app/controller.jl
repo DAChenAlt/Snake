@@ -25,7 +25,7 @@ function whichalgo(req)
             name = "default"
         end
     end
-
+    name = "moon"
     return algoDict[name]
 end
 
@@ -63,7 +63,7 @@ default_res = (snake_info, start, move, respond("ok"), foo)
 @app snakeserver = (
 	logger,
 	Mux.defaults,
-	page("/", respond("<h1>bla ble blue..... I'm fine, thanks :)</h1>")),
+	page("/", respond("<h1>Yayeet</h1>")),
 	page("/test/store/", test_store),
 	pages("/test/:s", test.(default_res)...)...,
 	pages("/echo/:s", echo.(default_res)...)...,
